@@ -19,14 +19,23 @@ var frontPage = document.getElementById('front')
 var questPage = document.getElementById('level')
 var inputPage = document.getElementById('input')
 var scorePage = document.getElementById('scores')
+// START PAGE TO SCORE PAGE
+var showScores = document.getElementById('scoreboard')
+showScores.addEventListener('click', viewScores)
 
+function viewScores() {
+  showScores.setAttribute('style', 'display:none')
+  timerShow.setAttribute('style', 'display:none')
+  frontPage.setAttribute('style', 'display:none')
+  scorePage.setAttribute('style', 'display:block')
+  clearInterval(myTimer);
+}
 // QUESTIONS & ANSWERS
 var quest = document.getElementById('question')
 var a1a = document.createElement('button')
 var a1b = document.createElement('button')
 var a1c = document.createElement('button')
 var a1d = document.createElement('button')
-
 // START PAGE TO LEVEL 1
 startBtn.addEventListener('click', startQuiz)
 
@@ -44,3 +53,11 @@ function startQuiz() {
   a1d.textContent = "d. global scope"
   clock();
 };
+// HIGH SCORES
+var tryAgain = document.querySelector('#restart')
+tryAgain.addEventListener('click', function() {
+  timerShow.setAttribute('style', 'display:block')
+  scorePage.setAttribute('style', 'display:none')
+  frontPage.setAttribute('style', 'display:block')
+  showScores.setAttribute('style', 'display:block')
+})

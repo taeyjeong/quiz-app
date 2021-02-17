@@ -14,3 +14,7 @@ button {
   align-items: center;
   text-align: center;
 }
+
+#level, #end, #scores {
+  display:none;
+}
