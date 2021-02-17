@@ -29,6 +29,14 @@ function viewScores() {
   questPage.setAttribute('style', 'display:none')
   frontPage.setAttribute('style', 'display:none')
   scorePage.setAttribute('style', 'display:block')
+  a1a.remove()
+  a1b.remove()
+  a1c.remove()
+  a1d.remove()
+  a2a.remove()
+  a2b.remove()
+  a2c.remove()
+  a2d.remove()
   clearInterval(myTimer);
 }
 // QUESTIONS & ANSWERS
@@ -59,10 +67,10 @@ function startQuiz() {
   clock();
 };
 // LEVEL 1 TO LEVEL 2
-a1a.addEventListener('click', setup1to2)
-a1b.addEventListener('click', setup1to2)
-a1c.addEventListener('click', setup1to2)
-a1d.addEventListener('click', setup1to2)
+a1a.addEventListener('click', lvl1to2wrong)
+a1b.addEventListener('click', lvl1to2wrong)
+a1c.addEventListener('click', lvl1to2right)
+a1d.addEventListener('click', lvl1to2wrong)
 
 function setup1to2 () {
   quest.textContent = "Which of the following is not required to run a for loop?"
@@ -79,7 +87,15 @@ function setup1to2 () {
   a2c.textContent = "c. set condition"
   a2d.textContent = "d. iterate"
 }
-
+// WRONG ANSWER
+function lvl1to2wrong () {
+  setup1to2();
+  currentTime -= 10 // WRONG ANSWER SUBTRACTS 10 SECONDS FROM TIMER
+}
+// RIGHT ANSWER
+function lvl1to2right () {
+  setup1to2();
+}
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
 
