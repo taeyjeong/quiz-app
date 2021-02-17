@@ -15,6 +15,6 @@ button {
   text-align: center;
 }
 
-#level, #scores {
+#level, #scores, .right, .wrong {
   display:none;
 }

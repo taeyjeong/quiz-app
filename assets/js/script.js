@@ -39,6 +39,22 @@ function viewScores() {
   a2d.remove()
   clearInterval(myTimer);
 }
+var right = document.querySelector('.right')
+function rightAns() {
+  right.setAttribute('style', 'display:block;') // MAKE THE "CORRECT!" APPEAR
+  setTimeout(function() {
+  right.setAttribute('style', 'display:none;') // MAKE THE "CORRECT!" DISAPPEAR
+}, 500);
+}
+// WRONG ANSWER TEXT DISPLAY
+var wrong = document.querySelector('.wrong')
+function wrongAns() {
+  currentTime -= 10; // SUBTRACT TIMER BY 10 SECONDS
+  wrong.setAttribute('style', 'display:block;') // MAKE THE "WRONG!" APPEAR
+  setTimeout(function() {
+  wrong.setAttribute('style', 'display:none;') // MAKE THE "WRONG!" DISAPPEAR
+}, 500);
+}
 // QUESTIONS & ANSWERS
 var quest = document.getElementById('question')
 var a1a = document.createElement('button')
@@ -90,11 +106,12 @@ function setup1to2 () {
 // WRONG ANSWER
 function lvl1to2wrong () {
   setup1to2();
-  currentTime -= 10 // WRONG ANSWER SUBTRACTS 10 SECONDS FROM TIMER
+  wrongAns();
 }
 // RIGHT ANSWER
 function lvl1to2right () {
   setup1to2();
+  rightAns();
 }
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
