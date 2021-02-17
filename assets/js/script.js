@@ -37,6 +37,10 @@ var a1a = document.createElement('button')
 var a1b = document.createElement('button')
 var a1c = document.createElement('button')
 var a1d = document.createElement('button')
+var a2a = document.createElement('button')
+var a2b = document.createElement('button')
+var a2c = document.createElement('button')
+var a2d = document.createElement('button')
 // START PAGE TO LEVEL 1
 startBtn.addEventListener('click', startQuiz)
 
@@ -54,6 +58,28 @@ function startQuiz() {
   a1d.textContent = "d. global scope"
   clock();
 };
+// LEVEL 1 TO LEVEL 2
+a1a.addEventListener('click', setup1to2)
+a1b.addEventListener('click', setup1to2)
+a1c.addEventListener('click', setup1to2)
+a1d.addEventListener('click', setup1to2)
+
+function setup1to2 () {
+  quest.textContent = "Which of the following is not required to run a for loop?"
+  a1a.remove()
+  a1b.remove()
+  a1c.remove()
+  a1d.remove()
+  questPage.appendChild(a2a)
+  questPage.appendChild(a2b)
+  questPage.appendChild(a2c)
+  questPage.appendChild(a2d)
+  a2a.textContent = "a. initialize variable"
+  a2b.textContent = "b. change string to number"
+  a2c.textContent = "c. set condition"
+  a2d.textContent = "d. iterate"
+}
+
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
 
