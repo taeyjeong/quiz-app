@@ -26,6 +26,7 @@ showScores.addEventListener('click', viewScores)
 function viewScores() {
   showScores.setAttribute('style', 'display:none')
   timerShow.setAttribute('style', 'display:none')
+  questPage.setAttribute('style', 'display:none')
   frontPage.setAttribute('style', 'display:none')
   scorePage.setAttribute('style', 'display:block')
   clearInterval(myTimer);
@@ -55,7 +56,9 @@ function startQuiz() {
 };
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
+
 tryAgain.addEventListener('click', function() {
+  timerStart.innerHTML = "75" // RESET TIMER
   timerShow.setAttribute('style', 'display:block')
   scorePage.setAttribute('style', 'display:none')
   frontPage.setAttribute('style', 'display:block')
