@@ -1,3 +1,18 @@
+// TIMER
+var timerShow = document.getElementById('time')
+var timerStart = document.getElementById('timer')
+var myTimer;
+var currentTime;
+  function clock() {
+    myTimer = setInterval(myClock, 1000); // myClock RUNS EVERY 1 SECOND
+    currentTime = 75;
+    function myClock() {
+      timerStart.innerHTML = --currentTime; // myClock SUBTRACTS 1 SECOND
+    if (currentTime === 0) {
+    clearInterval(); // TIMER STOP
+    } 
+  } 
+};
 // GIVE ALL PAGES VARIABLES (PURPOSE FOR GIVING VARIABLES IS TO MAKE PAGES APPEAR & DISAPPEAR)
 var startBtn = document.getElementById('btnStart')
 var frontPage = document.getElementById('front')
@@ -27,4 +42,5 @@ function startQuiz() {
   a1b.textContent = "b. redeclarable"
   a1c.textContent = "c. block scope"
   a1d.textContent = "d. global scope"
+  clock();
 };
