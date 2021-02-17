@@ -65,6 +65,18 @@ var a2a = document.createElement('button')
 var a2b = document.createElement('button')
 var a2c = document.createElement('button')
 var a2d = document.createElement('button')
+var a3a = document.createElement('button')
+var a3b = document.createElement('button')
+var a3c = document.createElement('button')
+var a3d = document.createElement('button')
+var a4a = document.createElement('button')
+var a4b = document.createElement('button')
+var a4c = document.createElement('button')
+var a4d = document.createElement('button')
+var a5a = document.createElement('button')
+var a5b = document.createElement('button')
+var a5c = document.createElement('button')
+var a5d = document.createElement('button')
 // START PAGE TO LEVEL 1
 startBtn.addEventListener('click', startQuiz)
 
@@ -111,6 +123,99 @@ function lvl1to2wrong () {
 // RIGHT ANSWER
 function lvl1to2right () {
   setup1to2();
+  rightAns();
+}
+// LEVEL 2 TO LEVEL 3
+a2a.addEventListener('click', lvl2to3wrong) 
+a2b.addEventListener('click', lvl2to3right) // RIGHT
+a2c.addEventListener('click', lvl2to3wrong)
+a2d.addEventListener('click', lvl2to3wrong)
+
+function setup2to3 () {
+  quest.textContent = "Which of these values is not a value of the typeof statement?"
+  a2a.remove()
+  a2b.remove()
+  a2c.remove()
+  a2d.remove()
+  questPage.appendChild(a3a)
+  questPage.appendChild(a3b)
+  questPage.appendChild(a3c)
+  questPage.appendChild(a3d)
+  a3a.textContent = "a. time"
+  a3b.textContent = "b. string"
+  a3c.textContent = "c. number"
+  a3d.textContent = "d. boolean"
+}
+
+function lvl2to3wrong () {
+  setup2to3();
+  wrongAns();
+}
+
+function lvl2to3right () {
+  setup2to3();
+  rightAns();
+}
+// LEVEL 3 TO LEVEL 4
+a3a.addEventListener('click', lvl3to4right) // RIGHT
+a3b.addEventListener('click', lvl3to4wrong) 
+a3c.addEventListener('click', lvl3to4wrong)
+a3d.addEventListener('click', lvl3to4wrong)
+
+function setup3to4() {
+  quest.textContent = "Which of the following is not a variable declaration?"
+  a3a.remove()
+  a3b.remove()
+  a3c.remove()
+  a3d.remove()
+  questPage.appendChild(a4a)
+  questPage.appendChild(a4b)
+  questPage.appendChild(a4c)
+  questPage.appendChild(a4d)
+  a4a.textContent = "a. var"
+  a4b.textContent = "b. let"
+  a4c.textContent = "c. const"
+  a4d.textContent = "d. equal"
+}
+
+function lvl3to4wrong () {
+  setup3to4();
+  wrongAns();
+}
+
+function lvl3to4right () {
+  setup3to4();
+  rightAns();
+}
+// LEVEL 4 TO LEVEL 5
+a4a.addEventListener('click', lvl4to5wrong) 
+a4b.addEventListener('click', lvl4to5wrong) // RIGHT
+a4c.addEventListener('click', lvl4to5wrong)
+a4d.addEventListener('click', lvl4to5right)
+
+function setup4to5() {
+  quest.textContent = 'var hello = "2" + "2" - "2"; what would the console log show for the hello variable?'
+  a4a.remove()
+  a4b.remove()
+  a4c.remove()
+  a4d.remove()
+  questPage.appendChild(a5a)
+  questPage.appendChild(a5b)
+  questPage.appendChild(a5c)
+  questPage.appendChild(a5d)
+  a5a.textContent = "a. 2"
+  a5b.textContent = "b. 4"
+  a5c.textContent = "c. 20"
+  a5d.textContent = "d. -2"
+}
+
+function lvl4to5wrong () {
+  setup4to5();
+  wrongAns();
+}
+
+function lvl4to5right () {
+  setup4to5();
   rightAns();
 }
 // HIGH SCORES
