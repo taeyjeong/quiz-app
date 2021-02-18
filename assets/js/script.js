@@ -257,6 +257,18 @@ function finishright () {
   rightAns();
   finish();
 }
+// RECORDING HIGH SCORE
+var initials = document.querySelector('#initials') // INITIAL INPUT
+var submit = document.querySelector('#submit') // ENTER BUTTON
+
+submit.addEventListener('click', function(event) {
+  event.preventDefault(); // TO STOP IT FROM RESETTING TO START PAGE
+  showScores.setAttribute('style', 'display:none')
+  timerShow.setAttribute('style', 'display:none')
+  inputPage.setAttribute('style', 'display:none')
+  scorePage.setAttribute('style', 'display:block')
+})
+
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
 
