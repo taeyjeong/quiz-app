@@ -9,7 +9,7 @@ var currentTime;
     function myClock() {
       timerStart.innerHTML = --currentTime; // myClock SUBTRACTS 1 SECOND
     if (currentTime === 0) {
-    clearInterval(); // TIMER STOP
+    finish(); // TIMER STOP & SHOW INPUT PAGE
     } 
   } 
 };
@@ -27,6 +27,7 @@ function viewScores() {
   showScores.setAttribute('style', 'display:none')
   timerShow.setAttribute('style', 'display:none')
   questPage.setAttribute('style', 'display:none')
+  inputPage.setAttribute('style', 'display:none')
   frontPage.setAttribute('style', 'display:none')
   scorePage.setAttribute('style', 'display:block')
   a1a.remove()
@@ -37,6 +38,18 @@ function viewScores() {
   a2b.remove()
   a2c.remove()
   a2d.remove()
+  a3a.remove()
+  a3b.remove()
+  a3c.remove()
+  a3d.remove()
+  a4a.remove()
+  a4b.remove()
+  a4c.remove()
+  a4d.remove()
+  a5a.remove()
+  a5b.remove()
+  a5c.remove()
+  a5d.remove()
   clearInterval(myTimer);
 }
 var right = document.querySelector('.right')
@@ -127,7 +140,7 @@ function lvl1to2right () {
 }
 // LEVEL 2 TO LEVEL 3
 a2a.addEventListener('click', lvl2to3wrong) 
-a2b.addEventListener('click', lvl2to3right) // RIGHT
+a2b.addEventListener('click', lvl2to3right)
 a2c.addEventListener('click', lvl2to3wrong)
 a2d.addEventListener('click', lvl2to3wrong)
 
@@ -157,7 +170,7 @@ function lvl2to3right () {
   rightAns();
 }
 // LEVEL 3 TO LEVEL 4
-a3a.addEventListener('click', lvl3to4right) // RIGHT
+a3a.addEventListener('click', lvl3to4right)
 a3b.addEventListener('click', lvl3to4wrong) 
 a3c.addEventListener('click', lvl3to4wrong)
 a3d.addEventListener('click', lvl3to4wrong)
@@ -189,7 +202,7 @@ function lvl3to4right () {
 }
 // LEVEL 4 TO LEVEL 5
 a4a.addEventListener('click', lvl4to5wrong) 
-a4b.addEventListener('click', lvl4to5wrong) // RIGHT
+a4b.addEventListener('click', lvl4to5wrong)
 a4c.addEventListener('click', lvl4to5wrong)
 a4d.addEventListener('click', lvl4to5right)
 
@@ -217,6 +230,32 @@ function lvl4to5wrong () {
 function lvl4to5right () {
   setup4to5();
   rightAns();
+}
+// LEVEL 5 TO INPUT PAGE
+a5a.addEventListener('click', finishwrong) 
+a5b.addEventListener('click', finishwrong)
+a5c.addEventListener('click', finishright)
+a5d.addEventListener('click', finishwrong)
+
+function finish() {
+  a5a.remove()
+  a5b.remove()
+  a5c.remove()
+  a5d.remove()
+  questPage.setAttribute('style', 'display:none')
+  inputPage.setAttribute('style', 'display:block')
+  clearInterval(myTimer);// TIMER STOP
+  scoreValue.innerHTML = currentTime
+}
+
+function finishwrong () {
+  wrongAns();
+  finish();
+}
+
+function finishright () {
+  rightAns();
+  finish();
 }
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
