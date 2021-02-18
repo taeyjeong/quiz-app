@@ -267,6 +267,11 @@ submit.addEventListener('click', function(event) {
   timerShow.setAttribute('style', 'display:none')
   inputPage.setAttribute('style', 'display:none')
   scorePage.setAttribute('style', 'display:block')
+
+  var ranking = document.querySelector('#logScores')
+  var list = document.createElement('li')
+  list.innerText = initials.value + ' - ' + currentTime
+  ranking.appendChild(list)
 })
 
 // HIGH SCORES
