@@ -270,6 +270,7 @@ submit.addEventListener('click', function(event) {
   timerShow.setAttribute('style', 'display:none')
   inputPage.setAttribute('style', 'display:none')
   scorePage.setAttribute('style', 'display:block')
+  ranking.setAttribute('style', 'display:block')
 
   localStorage.setItem('name', initials.value)
   localStorage.setItem('pts', scoreValue.innerHTML)
@@ -285,8 +286,9 @@ function bringRecords() {
   getList.textContent = getName + ' - ' + getPts
   ranking.appendChild(getList)
 }
-
-bringRecords();
+if (localStorage.getItem('pts') !== null && localStorage.getItem('name') !== null) {
+  bringRecords();
+}
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
 
@@ -296,4 +298,10 @@ tryAgain.addEventListener('click', function() {
   scorePage.setAttribute('style', 'display:none')
   frontPage.setAttribute('style', 'display:block')
   showScores.setAttribute('style', 'display:block')
+})
+
+var clearScores = document.querySelector('#clear')
+clearScores.addEventListener('click', function() {
+  ranking.setAttribute('style', 'display:none')
+  localStorage.clear()
 })
