@@ -277,6 +277,16 @@ submit.addEventListener('click', function(event) {
   setList.innerText = initials.value + ' - ' + scoreValue.innerHTML // INITIAL INPUT & SCORE
   ranking.appendChild(setList)
 })
+
+function bringRecords() {
+  var getPts = localStorage.getItem('pts')
+  var getName = localStorage.getItem('name')
+  var getList = document.createElement('li')
+  getList.textContent = getName + ' - ' + getPts
+  ranking.appendChild(getList)
+}
+
+bringRecords();
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
 
