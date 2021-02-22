@@ -13,12 +13,15 @@ var currentTime;
     } 
   } 
 };
+
 // GIVE ALL PAGES VARIABLES (PURPOSE FOR GIVING VARIABLES IS TO MAKE PAGES APPEAR & DISAPPEAR)
 var startBtn = document.getElementById('btnStart')
 var frontPage = document.getElementById('front')
 var questPage = document.getElementById('level')
 var inputPage = document.getElementById('input')
 var scorePage = document.getElementById('scores')
+// SCOREBOARD
+var ranking = document.querySelector('#logScores')
 // START PAGE TO SCORE PAGE
 var showScores = document.getElementById('scoreboard')
 showScores.addEventListener('click', viewScores)
@@ -268,12 +271,12 @@ submit.addEventListener('click', function(event) {
   inputPage.setAttribute('style', 'display:none')
   scorePage.setAttribute('style', 'display:block')
 
-  var ranking = document.querySelector('#logScores')
-  var list = document.createElement('li')
-  list.innerText = initials.value + ' - ' + currentTime
-  ranking.appendChild(list)
+  localStorage.setItem('name', initials.value)
+  localStorage.setItem('pts', scoreValue.innerHTML)
+  var setList = document.createElement('li')
+  setList.innerText = initials.value + ' - ' + scoreValue.innerHTML // INITIAL INPUT & SCORE
+  ranking.appendChild(setList)
 })
-
 // HIGH SCORES
 var tryAgain = document.querySelector('#restart')
 
