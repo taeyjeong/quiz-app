@@ -1,4 +1,4 @@
-# To do List
+# Quiz App
 
 - This is an application in which the user takes a quiz and is assessed a score at the end of the quiz according to the timer.  At the end of the quiz, the user inputs their initials which is logged into the scoreboard.
 
